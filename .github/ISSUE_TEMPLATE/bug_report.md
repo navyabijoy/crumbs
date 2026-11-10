@@ -16,4 +16,4 @@ labels: bug
 - OS and Python version:
 
 **Output or screenshot**
-Paste the `render.py` output, or a screenshot of the page. Remove anything private.
+Paste the `scripts/render.py` output, or a screenshot of the page. Remove anything private.

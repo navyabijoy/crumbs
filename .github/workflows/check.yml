@@ -20,8 +20,8 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - name: Compile
-        run: python -m py_compile render.py
+        run: python -m py_compile scripts/render.py
       - name: Validate the example
-        run: python render.py examples/example-trail.json --check-only
+        run: python scripts/render.py examples/example-trail.json --check-only
       - name: Build the example page
-        run: python render.py examples/example-trail.json --out /tmp/crumbs-demo --no-open && grep -q '"plainTitle"' /tmp/crumbs-demo/index.html
+        run: python scripts/render.py examples/example-trail.json --out /tmp/crumbs-demo --no-open && grep -q '"plainTitle"' /tmp/crumbs-demo/index.html

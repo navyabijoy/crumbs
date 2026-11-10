@@ -12,7 +12,7 @@ Useful things to include: what you did, the `trail.json` or issue text that trig
 
 - Script or HTML injection into the generated page from `trail.json` content
 - Links that can run code or leave the `http(s)` scheme
-- `render.py` reading or serving files outside the intended folders
+- `scripts/render.py` reading or serving files outside the intended folders
 - Ways for issue or repo content to make the skill run commands, push, comment, or open PRs
 
 ## Supported versions

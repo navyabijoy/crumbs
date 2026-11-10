@@ -4,7 +4,7 @@
 Standard library only. Python 3.8+.
 
 Usage:
-  python3 render.py TRAIL_JSON [--repo PATH] [--out DIR] [--serve] [--port N] [--no-open] [--check-only]
+  python3 scripts/render.py TRAIL_JSON [--repo PATH] [--out DIR] [--serve] [--port N] [--no-open] [--check-only]
 
 Exit codes: 0 = page written (warnings may be printed), 1 = validation errors (nothing written),
 2 = usage or I/O problem.
@@ -22,7 +22,7 @@ import webbrowser
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-TEMPLATE = HERE / "template.html"
+TEMPLATE = HERE.parent / "assets" / "template.html"
 PLACEHOLDER = "__CRUMBS_DATA__"
 
 PROOF = {"reproduced-real", "reproduced-isolated", "read-in-code", "inferred"}
