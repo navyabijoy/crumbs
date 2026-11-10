@@ -58,7 +58,7 @@
           "detailed": "The trail runs from the CLI entry point through loadConfig() and normalize() in src/config.js. formatDate() works correctly; it just receives the default pattern.",
           "proof": "read-in-code",
           "trail": "t2",
-          "deep": "Starting from the symptom and following the value through the code is faster than reading the repo top-down. Once you see where the value disappears, everything after that point can be ignored."
+          "deep": "Starting from the symptom and following the value through the code is faster than reading the repo top-down. Once you see where the value disappears, the code after that point matters less."
         }
       ]
     },
@@ -114,7 +114,7 @@
             ],
             "pointer": "dateFormat (default) and dateformat (user) both end up in the result."
           },
-          "deep": "Object spread copies keys exactly as written, and JavaScript keys are case-sensitive. No error is raised, so the bug is silent: the user's value is present in the object, just under a name nothing reads."
+          "deep": "Object spread copies keys exactly as written, and JavaScript keys are case-sensitive. No error is raised, so the bug is silent: the user's value is present in the object, just under a name the CLI never reads."
         }
       ]
     },
