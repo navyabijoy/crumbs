@@ -4,6 +4,14 @@
 
 <p align="center"><strong>Follow the trail from an issue to its cause.</strong></p>
 
+<!-- <p align="center">
+  <a href="https://skills.sh/navyabijoy/crumbs"><img alt="skills.sh installs" src="https://skills.sh/b/navyabijoy/crumbs" /></a>
+</p> -->
+
+```bash
+npx skills add navyabijoy/crumbs
+```
+
 You've just been assigned your first issue on a project you've never seen. The codebase is huge, the issue is three lines long, and you don't know where to start.
 
 crumbs is an agent skill that does the first few hours of that work with you. Give it an issue, and your coding agent traces only the code that issue touches, tries to reproduce the problem, and opens a calm, interactive page on your machine that explains it in plain words: what's wrong, why, where it lives, and what your change has to keep true.
@@ -11,7 +19,7 @@ crumbs is an agent skill that does the first few hours of that work with you. Gi
 It works with **Claude Code, Codex CLI, opencode, Google Antigravity** and other agents that support the [Agent Skills](#how-it-works) format, on **any repository**: any language, framework, size, hosting platform or issue type.
 
 ```
-explain issue #123
+/crumbs explain issue #123
 ```
 
 crumbs explains. It never writes the fix, comments on the issue, pushes, or opens a pull request. The change stays yours.
@@ -93,65 +101,38 @@ It also warns about broad wording ("nothing", "always"), text that says "reprodu
 
 ## Install
 
-crumbs is a folder with a `SKILL.md` file at its root, the format shared by most coding agents. Installing it means cloning that folder into the place your agent looks for skills.
+```bash
+npx skills add navyabijoy/crumbs
+```
 
-### Claude Code
+This uses the open [skills CLI](https://skills.sh). It detects the coding agents you have (Claude Code, Codex CLI, opencode, Antigravity and others) and installs crumbs into each one's skills folder. Restart your agent or start a new session afterwards. In Claude Code, type `/` and `crumbs` should be in the list.
+
+<details>
+<summary><strong>Install manually with git</strong></summary>
+
+crumbs is a folder with a `SKILL.md` file at its root. Clone it into your agent's skills folder; the folder name must stay `crumbs`.
+
+| Agent | Global | Single project |
+|---|---|---|
+| Claude Code | `~/.claude/skills/crumbs` | `.claude/skills/crumbs` |
+| Codex CLI | `~/.codex/skills/crumbs` | `.codex/skills/crumbs` |
+| opencode | `~/.config/opencode/skills/crumbs` | `.opencode/skills/crumbs` |
+| Antigravity and other Agent Skills agents | `~/.agents/skills/crumbs` | `.agents/skills/crumbs` |
 
 ```bash
 git clone https://github.com/navyabijoy/crumbs ~/.claude/skills/crumbs
 ```
 
-For a single project instead, clone it into `.claude/skills/crumbs` inside that project. Restart Claude Code, type `/`, and `crumbs` should be in the list.
-
-### Codex CLI
-
-```bash
-git clone https://github.com/navyabijoy/crumbs ~/.codex/skills/crumbs
-```
-
-For a single project, use `.codex/skills/crumbs`. Recent versions of Codex also read `~/.agents/skills` (see [Any agent](#any-agent-that-supports-agent-skills)). Start a new session after installing.
-
-### opencode
-
-```bash
-git clone https://github.com/navyabijoy/crumbs ~/.config/opencode/skills/crumbs
-```
-
-For a single project, use `.opencode/skills/crumbs`. A project copy takes precedence over the global one.
-
-### Google Antigravity
-
-```bash
-git clone https://github.com/navyabijoy/crumbs ~/.agents/skills/crumbs
-```
-
-For a single workspace, use `.agents/skills/crumbs` at the workspace root.
-
-### Any agent that supports Agent Skills
-
-Many agents now read the shared folder `~/.agents/skills`:
-
-```bash
-git clone https://github.com/navyabijoy/crumbs ~/.agents/skills/crumbs
-```
-
-If your agent uses a different folder, clone crumbs there; the folder name must stay `crumbs`. Check your agent's documentation for its skills folder.
-
-### Using more than one agent
-
-Clone once and link it into each agent's folder:
+Using more than one agent? Clone once and symlink it into each folder:
 
 ```bash
 git clone https://github.com/navyabijoy/crumbs ~/.agents/skills/crumbs
 ln -s ~/.agents/skills/crumbs ~/.claude/skills/crumbs
-ln -s ~/.agents/skills/crumbs ~/.config/opencode/skills/crumbs
 ```
 
-### Updating
+To update a manual install: `git -C ~/.claude/skills/crumbs pull` (use the folder you installed into).
 
-```bash
-git -C ~/.claude/skills/crumbs pull   # use the folder you installed into
-```
+</details>
 
 ---
 
