@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.8", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Compile
+        run: python -m py_compile render.py
+      - name: Validate the example
+        run: python render.py examples/example-trail.json --check-only
+      - name: Build the example page
+        run: python render.py examples/example-trail.json --out /tmp/crumbs-demo --no-open && grep -q '"plainTitle"' /tmp/crumbs-demo/index.html
