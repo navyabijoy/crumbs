@@ -24,6 +24,8 @@ It works with **Claude Code, Codex CLI, opencode, Google Antigravity** and other
 
 crumbs explains. It never writes the fix, comments on the issue, pushes, or opens a pull request. The change stays yours.
 
+https://github.com/user-attachments/assets/71a743a1-b9a4-4c65-87d2-636adb1d6692
+
 ---
 
 ## Contents
