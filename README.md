@@ -1,6 +1,8 @@
-# crumbs
+<p align="center">
+  <img src=".github/assets/crumbs-logo.png" alt="crumbs" width="420">
+</p>
 
-**Follow the trail from an issue to its cause.**
+<p align="center"><strong>Follow the trail from an issue to its cause.</strong></p>
 
 You've just been assigned your first issue on a project you've never seen. The codebase is huge, the issue is three lines long, and you don't know where to start.
 
