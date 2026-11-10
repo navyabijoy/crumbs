@@ -1,5 +1,5 @@
 <p align="center">
-  <img src=".github/assets/crumbs-logo.png" alt="crumbs" width="420">
+  <img width="1584" height="396" alt="crumbs" src="https://github.com/user-attachments/assets/938bc1fc-f82e-4703-bdcc-f7c364e34a43" />
 </p>
 
 <p align="center"><strong>Follow the trail from an issue to its cause.</strong></p>
